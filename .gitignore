@@ -1,3 +1,10 @@
+# Arquivos pessoais e de configuração
+env_ext 
+env_extensao
+class.key
+credentials.json
+token.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

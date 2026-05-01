@@ -34,11 +34,15 @@ class ClassroomEndpoint:
         except HttpError as error:
             print(f"An error occurred: {error}")
             return None
-        
+    
+    def __clear_course_json(self):
+        self.course_json = []
+
     def get_courses_informations_by_user(self):
         try:
             results = self.service.courses().list().execute()
             courses = results.get("courses", [])
+            self.__clear_course_json()
             for course in courses:
                 self.course_json.append({
                 "course_id":         course.get("id"),
@@ -60,6 +64,7 @@ class ClassroomEndpoint:
     def get_curser_informations_by_id(self, course_id):
         try:
             course = self.service.courses().get(id=course_id).execute()
+            self.__clear_course_json()
             self.course_json.append({
                 "course_id":         course["id"],
                 "name":              course["name"],
@@ -73,6 +78,27 @@ class ClassroomEndpoint:
                 "teacher_folder_id": course.get("teacherFolder", {}).get("id"),
             })
             return self.course_json
+        except HttpError as error:
+            print(f"An error occurred: {error}")
+            return None
+        
+    def get_works_by_course_id(self, course_id):
+        try:
+            results = self.service.courses().courseWork().list(courseId=course_id).execute()
+            works = results.get("courseWork", [])
+            self.works_by_course_json = []
+            for work in works:
+                self.works_by_course_json.append({
+                    'work_id': work.get("id"),
+                    'title': work.get("title"),
+                    'description': work.get("description"),
+                    'state': work.get("state"),
+                    'materials': work.get("materials", []), # lista de materias que o professor disponibiliza na atividade
+                    'dueDate': work.get("dueDate"),
+                    'maxPoints': work.get("maxPoints"), # Valor daquela atv vai de 0 a 100
+                    'assigneeMode': work.get("assigneeMode"), # Pode ser ALL ou INDIVIDUAL
+                })
+            return self.works_by_course_json
         except HttpError as error:
             print(f"An error occurred: {error}")
             return None
