@@ -102,3 +102,55 @@ class ClassroomEndpoint:
         except HttpError as error:
             print(f"An error occurred: {error}")
             return None
+
+    def get_students_by_course_id(self, course_id):
+        try:
+            students_by_course_json = []
+            request = self.service.courses().students().list(courseId=course_id)
+
+            while request is not None:
+                results = request.execute()
+                students = results.get("students", [])
+
+                for student in students:
+                    profile = student.get("profile", {})
+                    students_by_course_json.append({
+                        "course_id": course_id,
+                        "user_id": student.get("userId"),
+                        "full_name": profile.get("name", {}).get("fullName"),
+                        "email": profile.get("emailAddress"),
+                        "photo_url": profile.get("photoUrl"),
+                    })
+
+                request = self.service.courses().students().list_next(request, results)
+
+            return students_by_course_json
+        except HttpError as error:
+            print(f"An error occurred: {error}")
+            return None
+
+    def get_teachers_by_course_id(self, course_id):
+        try:
+            teachers_by_course_json = []
+            request = self.service.courses().teachers().list(courseId=course_id)
+
+            while request is not None:
+                results = request.execute()
+                teachers = results.get("teachers", [])
+
+                for teacher in teachers:
+                    profile = teacher.get("profile", {})
+                    teachers_by_course_json.append({
+                        "course_id": course_id,
+                        "user_id": teacher.get("userId"),
+                        "full_name": profile.get("name", {}).get("fullName"),
+                        "email": profile.get("emailAddress"),
+                        "photo_url": profile.get("photoUrl"),
+                    })
+
+                request = self.service.courses().teachers().list_next(request, results)
+
+            return teachers_by_course_json
+        except HttpError as error:
+            print(f"An error occurred: {error}")
+            return None
