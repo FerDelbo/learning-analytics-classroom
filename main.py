@@ -34,6 +34,17 @@ def print_course_info(course):
     print(f"Teacher Folder ID: {course['teacher_folder_id']}")
     print("====================================\n\n")
 
+def print_people_by_course(title, people):
+    print("====================================")
+    print(title)
+    for person in people:
+        print(f"Name: {person['full_name']}")
+        print(f"User ID: {person['user_id']}")
+        print(f"Email: {person['email']}")
+        print(f"Photo URL: {person['photo_url']}")
+        print("------------------------------------")
+    print("====================================\n\n")
+
 
 def main():
     config = load_ymal()
@@ -51,6 +62,12 @@ def main():
 
     data_sceinte_course_works = classroom.get_works_by_course_id("818860440446")
     print_works_by_course(data_sceinte_course_works)
+
+    students = classroom.get_students_by_course_id("818860440446")
+    print_people_by_course("Students", students)
+
+    teachers = classroom.get_teachers_by_course_id("818860440446")
+    print_people_by_course("Teachers", teachers)
     # print(data_sceinte_course_works)
 
 if __name__ == "__main__":
