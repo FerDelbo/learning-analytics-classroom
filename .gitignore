@@ -1,5 +1,7 @@
 # Arquivos pessoais e de configuração
 env_ext 
+env_ext_n
+env2
 env_extensao
 class.key
 credentials.json

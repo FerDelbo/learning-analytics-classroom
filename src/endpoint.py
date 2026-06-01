@@ -1,4 +1,5 @@
 import os
+import json
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -37,6 +38,18 @@ class ClassroomEndpoint:
     
     def __clear_course_json(self):
         self.course_json = []
+
+    def save_to_json(self, data, filename):
+        try:
+            os.makedirs(os.path.dirname(filename), exist_ok=True) if os.path.dirname(filename) else None
+            
+            with open(filename, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
+            print(f"Data save sucessfully saved to: {filename}")
+            return True
+        except Exception as e:
+            print(f"An error occurred while saving {filename}: {e}")
+            return False
 
     def get_courses_informations_by_user(self):
         try:

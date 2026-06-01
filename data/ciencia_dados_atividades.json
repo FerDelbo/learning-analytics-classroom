@@ -1,0 +1,126 @@
+[
+    {
+        "work_id": "797779241506",
+        "title": "Entregar resumo (10)",
+        "description": "resumo sobre os seguintes conceitos\n\nAnalise exploratoria\nMedidas tendencia central\nMedidas de dispersão",
+        "state": "PUBLISHED",
+        "materials": [],
+        "dueDate": null,
+        "maxPoints": 100,
+        "assigneeMode": "INDIVIDUAL_STUDENTS"
+    },
+    {
+        "work_id": "797643726636",
+        "title": "Entrega colab 1 trimestre",
+        "description": "Entrgar o google colab qu edesenvolvemos no primeiro semestre",
+        "state": "PUBLISHED",
+        "materials": [],
+        "dueDate": {
+            "year": 2026,
+            "month": 5,
+            "day": 9
+        },
+        "maxPoints": 10,
+        "assigneeMode": "ALL_STUDENTS"
+    },
+    {
+        "work_id": "797631789669",
+        "title": "Recuperação: medidas de tendência central",
+        "description": "O quiz é uma avaliação interativa sobre .\nComposto por 4 questões de múltipla escolha, aborda os conceitos de média, mediana e distribuição de dados por meio de cenários práticos com código pandas e visualização de gráficos.\n\nValendo 20 pontos.",
+        "state": "PUBLISHED",
+        "materials": [
+            {
+                "form": {
+                    "formUrl": "https://docs.google.com/forms/d/1MWe-jkbnwi7UXWv1FVhR11CZTPkDzUHLar2v51p6exQ/edit",
+                    "title": "Quiz - Tendencia de medida central",
+                    "thumbnailUrl": "https://lh3.googleusercontent.com/gfgCGDMPx8tBPXlq8Wyka40Sk0Aa4qv9B-O545TQ3HbWMhK_Gwt4_S5rbugV2t_N6iKcFi3i0jWXjto=w90-h90-p"
+                }
+            }
+        ],
+        "dueDate": {
+            "year": 2026,
+            "month": 5,
+            "day": 5
+        },
+        "maxPoints": 20,
+        "assigneeMode": "ALL_STUDENTS"
+    },
+    {
+        "work_id": "797494894985",
+        "title": "Atividade Prática: Análise de Tendência Central e Assimetria com Pandas",
+        "description": "Objetivo: Capacitar os alunos na manipulação de conjuntos de dados reais utilizando a biblioteca Pandas, focando no cálculo de medidas de tendência central e na análise crítica de distribuições estatísticas.\n\n\nDescrição da Atividade: Nesta prática, os alunos deverão explorar dois conjuntos de dados distintos: uma base de dados de filmes e uma base de vendas globais de video games. Para cada cenário, as seguintes etapas devem ser cumpridas:\n Determinar a média e a mediana de variáveis quantitativas específicas (Score da Audiência e Vendas Globais).\n Gerar histogramas utilizando Seaborn e Matplotlib para visualizar a distribuição dos dados.\n Identificar e justificar o tipo de assimetria encontrada (positiva, negativa ou simétrica) com base na relação entre a média, a mediana e o comportamento do histograma.\n Discutir como valores extremos podem impactar as medidas de tendência central e a percepção dos resultados.\nDevem ser utilizados os arquivos em anexo, um como template da atividade e outro para consulta durante.\nVale 20 pontos e deve ser entregue até dia 28/04 as 23:59. \nSerá utilizada a aula em laboratório para desenvolvimento.\n\nBoa atividade a todos",
+        "state": "PUBLISHED",
+        "materials": [
+            {
+                "notebook": {
+                    "id": "f3069a6c-de18-417f-a703-5e09a044146d",
+                    "title": "Ciência de dados 3 TDS",
+                    "url": "https://notebooklm.google.com/notebook/f3069a6c-de18-417f-a703-5e09a044146d"
+                }
+            },
+            {
+                "driveFile": {
+                    "driveFile": {
+                        "id": "1VT_4zC_0aruTBUCZbe-pkoT2DuKZiPWY",
+                        "title": "Medidas de tendencia central.ipynb",
+                        "alternateLink": "https://colab.research.google.com/drive/1VT_4zC_0aruTBUCZbe-pkoT2DuKZiPWY?ouid=109542898855149889440"
+                    },
+                    "shareMode": "STUDENT_COPY"
+                }
+            }
+        ],
+        "dueDate": {
+            "year": 2026,
+            "month": 5,
+            "day": 1
+        },
+        "maxPoints": 20,
+        "assigneeMode": "ALL_STUDENTS"
+    },
+    {
+        "work_id": "847524482551",
+        "title": "Análise exploratória - Conhecendo seus dados",
+        "description": "Vocês foram contratados como cientistas de dados por uma empresa de e-commerce.\nFoi disponibilizado para vocês o arquivo CSV 'segredo' para fazer uma análise sobre as vendas.\nA base não será disponibilizada ainda, apenas na aula do dia 16/03.\nO trabalho deve ser continuado na aula do dia 17/03.\n\nA avaliação ocorrerá com as respostas corretas das 8 questões, os valores e códigos devem estar corretos, códigos que não executarem serão descartados.\nNão é permitido uso de IA, apenas documentação, caso seja pego utilizando, a atividade será zerada!\nRespostas similares ou que o professor achar estranhas serão questionadas ao aluno. Caso não consiga responder, será descontado 10% da nota, sendo acumulativo por questão.\n\nAs instruções estão no documento PDF em anexo.",
+        "state": "PUBLISHED",
+        "materials": [
+            {
+                "driveFile": {
+                    "driveFile": {
+                        "id": "1mzSJ_FoDmJ8l4wsUDpsgmIcYguihiCpB",
+                        "title": "correto.pdf",
+                        "alternateLink": "https://drive.google.com/file/d/1mzSJ_FoDmJ8l4wsUDpsgmIcYguihiCpB/view?usp=drive_web",
+                        "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBM27Rlzt7xgN4KFkbyd0Aj0ep0jV14SYdji_a_QOlHkXOITlVc_XgPcb1kSMG3amaaJWcIWE9IcwFqKtAKU306We4AgUUrHAoGWQNJS8wM5DgU04A=s200"
+                    },
+                    "shareMode": "VIEW"
+                }
+            },
+            {
+                "driveFile": {
+                    "driveFile": {
+                        "id": "1Ehj621Z8rrOg9Ua0kUldGTEv6tbE7Veo",
+                        "title": "Segredo.csv",
+                        "alternateLink": "https://drive.google.com/file/d/1Ehj621Z8rrOg9Ua0kUldGTEv6tbE7Veo/view?usp=drive_web"
+                    },
+                    "shareMode": "VIEW"
+                }
+            },
+            {
+                "driveFile": {
+                    "driveFile": {
+                        "id": "1uNoAWjZpZo9zSdRnB25fNTnEM9dCcgnU",
+                        "title": "segredo.csv",
+                        "alternateLink": "https://drive.google.com/file/d/1uNoAWjZpZo9zSdRnB25fNTnEM9dCcgnU/view?usp=drive_web"
+                    },
+                    "shareMode": "VIEW"
+                }
+            }
+        ],
+        "dueDate": {
+            "year": 2026,
+            "month": 3,
+            "day": 24
+        },
+        "maxPoints": 50,
+        "assigneeMode": "ALL_STUDENTS"
+    }
+]
