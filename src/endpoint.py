@@ -203,12 +203,19 @@ class ClassroomEndpoint:
                 for sub in subs_result.get("studentSubmissions", []):
                     user_id = sub.get("userId")
                     profile = self._get_student_profile(user_id)
+                    state   = sub.get("state")
 
                     answer = None
                     if "multipleChoiceSubmission" in sub:
                         answer = sub["multipleChoiceSubmission"].get("answer")
                     elif "shortAnswerSubmission" in sub:
                         answer = sub["shortAnswerSubmission"].get("answer")
+
+                    creation_time = sub.get("creationTime")
+                    update_time   = sub.get("updateTime")
+                    duration      = self.__calc_duration(creation_time, update_time)
+
+                    completed = state in ("TURNED_IN", "RETURNED")
 
                     result.append({
                         "course_id":      course_id,
@@ -220,10 +227,12 @@ class ClassroomEndpoint:
                         "email":          profile["email"],
                         "assigned_grade": sub.get("assignedGrade"),
                         "draft_grade":    sub.get("draftGrade"),
-                        "state":          sub.get("state"),
+                        "state":          state,
+                        "completed":      completed,
                         "late":           sub.get("late", False),
                         "answer":         answer,
                         "update_time":    sub.get("updateTime"),
+                        "duration":       duration,
                     })
 
             except HttpError as error:
@@ -250,9 +259,11 @@ class ClassroomEndpoint:
                 "max_points":     entry["max_points"],
                 "assigned_grade": entry["assigned_grade"],
                 "state":          entry["state"],
+                "completed":      entry["completed"],
                 "late":           entry["late"],
                 "answer":         entry["answer"],
                 "update_time":    entry["update_time"],
+                "duration":       entry["duration"],
             })
 
         return list(users.values())
